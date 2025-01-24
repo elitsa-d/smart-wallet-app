@@ -2,9 +2,11 @@ package app.web;
 
 import app.user.model.User;
 import app.user.service.UserService;
+import app.web.dto.RegisterRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 import java.util.UUID;
 
@@ -28,8 +30,17 @@ public class IndexController {
     }
 
     @GetMapping("/register")
-    public String getRegisterPage() {
-        return "register";
+    public ModelAndView getRegisterPage() {
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName("register");
+        modelAndView.addObject("registerRequest", new RegisterRequest());
+        return modelAndView;
+    }
+
+    @PostMapping("/register")
+    public ModelAndView registerNewUser(RegisterRequest registerRequest) {
+        System.out.println();
+        return null;
     }
 
     @GetMapping("/home")
