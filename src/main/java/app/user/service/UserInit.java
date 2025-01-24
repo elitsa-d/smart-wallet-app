@@ -5,7 +5,6 @@ import app.web.dto.RegisterRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
-
 import java.time.LocalTime;
 
 
@@ -30,7 +29,6 @@ public class UserInit implements CommandLineRunner {
                 .username("Vik123")
                 .password("123123")
                 .country(Country.BULGARIA)
-                .updatedOn(LocalTime.now())
                 .build();
 
         userService.register(registerRequest);
