@@ -22,7 +22,6 @@ import java.util.UUID;
 @Service
 @Slf4j
 public class UserService {
-
     private final UserRepository userRepository;
     private final PasswordEncoder passwordEncoder;
     private final SubscriptionService subscriptionService;

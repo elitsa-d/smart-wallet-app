@@ -34,10 +34,8 @@
       <input type="password" placeholder="Password" id="password" th:field="*{password}">
 
       <label for="country">Country</label>
-      <select id="country">
-        <option value="BULGARIA">BULGARIA</option>
-        <option value="GERMANY">GERMANY</option>
-        <option value="FRANCE">FRANCE</option>
+      <select id="country" th:field="*{country}">
+        <option th:each="country : ${T(app.user.model.Country).values()}" th:value="${country}" th:text="${#strings.capitalize(#strings.toLowerCase(country))}"></option>
       </select>
 
       <button>Register</button>

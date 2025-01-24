@@ -39,8 +39,11 @@ public class IndexController {
 
     @PostMapping("/register")
     public ModelAndView registerNewUser(RegisterRequest registerRequest) {
-        System.out.println();
-        return null;
+        User registeredUser = userService.register(registerRequest);
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName("home");
+        modelAndView.addObject("user", registeredUser);
+        return modelAndView;
     }
 
     @GetMapping("/home")
